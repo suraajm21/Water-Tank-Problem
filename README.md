@@ -24,10 +24,3 @@ For each index `i`:
 Total trapped water is `sum(water[i])`.
 
 Time: `O(n)` | Space: `O(n)`
-
-## Deploy (GitHub Pages)
-
-1. Create a repo and commit these files.
-2. In GitHub: **Settings → Pages → Deploy from branch**.
-3. Select your branch and `/ (root)` folder.
-
