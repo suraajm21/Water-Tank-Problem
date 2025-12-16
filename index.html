@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Water Tank Problem (Trapping Rain Water)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="header">
+      <div>
+        <h1>Water Tank Problem</h1>
+        <p class="sub">
+          Enter block heights (n ≥ 0). The app computes trapped water units and visualizes blocks + water using SVG.
+        </p>
+      </div>
+      <div class="badge" id="resultBadge" aria-live="polite">0 units</div>
+    </header>
+
+    <section class="panel">
+      <label for="heightsInput" class="label">Heights array</label>
+      <div class="row">
+        <input id="heightsInput" class="input" spellcheck="false"
+               value="[0,4,0,0,0,6,0,6,4,0]"
+               aria-describedby="help" />
+        <button id="computeBtn" class="btn">Compute</button>
+        <button id="exampleBtn" class="btn btn-secondary" title="Load example">Example</button>
+      </div>
+      <p id="help" class="help">
+        Accepts JSON (e.g. <code>[0,4,0]</code>) or comma-separated (e.g. <code>0,4,0</code>).
+      </p>
+      <p id="error" class="error" role="alert" hidden></p>
+    </section>
+
+    <section class="panel">
+      <div class="vizHeader">
+        <h2>Visualization</h2>
+        <div class="toggles">
+          <label class="toggle">
+            <input type="checkbox" id="gridToggle" checked />
+            <span>Grid</span>
+          </label>
+          <label class="toggle">
+            <input type="checkbox" id="labelsToggle" checked />
+            <span>Labels</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="vizWrap">
+        <svg id="viz" class="viz" aria-label="Blocks and trapped water visualization" role="img"></svg>
+      </div>
+      <div class="legend">
+        <span class="dot dot-block"></span><span>Block</span>
+        <span class="dot dot-water"></span><span>Water</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Per-index breakdown</h2>
+      <div class="tableWrap">
+        <table class="table" id="breakdown">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>Height</th>
+              <th>Left max</th>
+              <th>Right max</th>
+              <th>Water</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Tip: Commit this folder to a Git repo and deploy with GitHub Pages.</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
